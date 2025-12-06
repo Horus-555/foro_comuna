@@ -1,0 +1,385 @@
+/* ---------------------------------------------
+   ESTILOS GENERALES
+--------------------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 10px;
+}
+
+/* ---------------------------------------------
+   HEADER
+--------------------------------------------- */
+.main-header {
+    width: 100%;
+    background: #ffffffd9;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 8px #00000022;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.header-center ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.header-center a {
+    font-size: 15px;
+    color: #444;
+    text-decoration: none;
+    padding: 6px 10px;
+}
+
+.header-center a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown>a {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 28px;
+    background: #ffffff;
+    min-width: 170px;
+    box-shadow: 0 2px 10px #00000033;
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 999;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 15px;
+    color: #333;
+}
+
+.dropdown-menu li a:hover {
+    background: #ececec;
+}
+
+/* MOSTRAR SOLO ON HOVER */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Header derecha */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.logout-btn,
+.login-btn {
+    background: #0275d8;
+    padding: 6px 12px;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.logout-btn {
+    background: #d9534f;
+}
+
+.logout-btn:hover,
+.login-btn:hover {
+    opacity: .85;
+}
+
+/* ---------------------------------------------
+   BOTONES
+--------------------------------------------- */
+.btn,
+button {
+    background: #0275d8;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover,
+button:hover {
+    opacity: .85;
+}
+
+/* ---------------------------------------------
+   FORMULARIOS
+--------------------------------------------- */
+form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=file],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+/* Alertas */
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.alert.error {
+    background: #f2dede;
+    color: #a94442;
+}
+
+.alert.success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+/* ---------------------------------------------
+   CALENDARIO
+--------------------------------------------- */
+.calendar-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px #00000022;
+    margin-top: 25px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.calendar-day {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    min-height: 75px;
+}
+
+.calendar-day.event {
+    background: #0275d833;
+    border-color: #0275d8;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------
+   FOOTER
+--------------------------------------------- */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: #fff;
+    margin-top: 25px;
+    box-shadow: 0px -2px 5px #00000022;
+}
+
+/* ---------------------------------------------
+   GLOBAL FIX
+--------------------------------------------- */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------
+   TARJETAS DE POSTS EN GRID (nuevo)
+--------------------------------------------- */
+
+.post-card-grid {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 8px #00000022;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-card-grid:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 12px #00000033;
+}
+
+.post-card-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.post-card-grid .card-title a {
+    color: #222;
+    text-decoration: none;
+}
+
+.post-card-grid .card-title a:hover {
+    text-decoration: underline;
+}
+
+.post-card-grid .card-text.small {
+    font-size: 13px;
+    color: #777;
+}
+
+.post-card-grid .card-footer {
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.post-card-grid .btn {
+    background: #0275d8;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.post-card-grid .btn:hover {
+    opacity: .86;
+}
+
+@media (max-width: 600px) {
+    .post-card-grid img {
+        height: 150px;
+    }
+}
+
+/* ---------------------------------------------
+   LOGIN BOX
+--------------------------------------------- */
+.login-box {
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 60px auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000025;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.login-links {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login-links a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+.login-box button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* REGISTRO */
+.register-section {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.register-text {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #0275d8;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.register-btn:hover {
+    opacity: 0.85;
+}
